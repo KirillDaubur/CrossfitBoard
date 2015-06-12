@@ -1,0 +1,35 @@
+﻿@model Entities.Dto.UserDto
+
+@{
+    ViewBag.Title = "HomePage";
+    Layout = "~/Views/Shared/Layout_start.cshtml";
+}
+
+<div class="centeredBox">
+    <h2>Welcome!</h2>
+
+    @using (Html.BeginForm("LogIn", "Account", FormMethod.Post))
+    {
+        @Html.ValidationSummary(true)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            <label> Password</label>
+        </div>
+        <div class="editor-field">
+            @Html.PasswordFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>      
+        <p>
+            <input type="submit" value="Log In" />
+        </p>
+    }
+    <p><a href="@Url.Action("Register", "Account")">Create new account</a></p>
+</div>

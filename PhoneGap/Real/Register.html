@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+	<script src="jquery-2.1.3.min.js"></script>
+    <link type="text/css" href="Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="hat">
+        <div id="menu">
+            <table>
+                <tr>
+                    <td><h1>Crossfit Board</h1></td>                  
+                </tr>
+            </table>
+        </div>
+    </div>
+
+	<script type="text/javascript"> 
+	function validate(){
+		var fn = document.getElementById("first").value;
+        var ln = document.getElementById("last").value;
+		var age = document.getElementById("age").value;
+        var email = document.getElementById("email").value;
+		var pass = document.getElementById("pass").value;
+		var passConf = document.getElementById("passConf").value;		
+		
+		if( fn == "" || ln == "" || age == "" || email == "" || pass == "" || passConf == "")
+		{
+			alert("Fill all fields, please!");
+		}        
+		else
+		{		
+			if( pass !== passConf)
+			{
+				alert("Passwords don`t match!");
+			} 
+			else{
+				$("#logg").attr("href", "index.html");	
+			}			
+		}
+	}
+	</script>
+	<div class="centeredBox">
+	 <div class="editor-label">		
+           <p>First name</p>
+        </div>
+        <div class="editor-field">
+            <input type="textbox" id = "first"/>
+        </div>
+			 <div class="editor-label">		
+           <p>Last name</p>
+        </div>
+        <div class="editor-field">
+            <input type="textbox" id = "last"/>
+        </div>
+		 <div class="editor-label">		
+           <p>Age</p>
+        </div>
+        <div class="editor-field">
+            <input type="textbox" id = "age"/>
+        </div>
+		
+			 <div class="editor-label">		
+           <p>Sex</p>
+        </div>
+        <div class="editor-field">
+            <input type="radio" name = "sexRadio" id = "sexM" checked>Male</input>
+			<input type="radio" name = "sexRadio"  id = "sexF">Female</input>
+        </div>
+	
+		 <div class="editor-label">		
+           <p>Email</p>
+        </div>
+        <div class="editor-field">
+            <input type="textbox" id = "email"/>
+        </div>
+			 <div class="editor-label">		
+           <p>Password</p>
+        </div>
+        <div class="editor-field">
+            <input type="password" id = "pass"/>
+        </div>
+		 <div class="editor-label">		
+           <p>Confirm password</p>
+        </div>
+        <div class="editor-field">
+            <input type="password" id = "passConf"/>
+        </div>
+    
+	<p><a id="logg"><input type="submit" value="Register" onclick = "validate()"/></a></p>
+	</div>
+</body>
+
+</html>

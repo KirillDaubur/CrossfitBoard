@@ -1,0 +1,52 @@
+﻿@model List<Entities.Dto.UserDto>
+
+@{
+    ViewBag.Title = "WardList";
+    Layout = "~/Views/Shared/Layout_start.cshtml";
+}
+
+@foreach (Entities.Dto.UserDto item in Model)
+{
+    <div id="bordered">
+        <table class="profile">
+            <tr>
+                <td rowspan="4">
+                    <input type="image" class="smallAvatar" src="avaYanis.bmp" />
+                </td>
+                <td>
+                    <p>Personal data:</p>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Name:<p /> <b>@Html.ValueFor(model => item.FirstName)</b> <p /> <b>@Html.ValueFor(model => item.LastName)</b></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Age: <b>@Html.ValueFor(model => item.Age)</b></p>
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td>
+                    <p>Email: <b>@Html.ValueFor(model => item.Email)</b></p>
+                </td>
+            </tr>
+            <tr>
+                 <td colspan="2">
+                        <p><a href="YanisWardList.html"><input type="submit" value="View WOD" /></a></p>
+                  </td>
+                
+               
+
+            </tr>
+
+        </table> 
+    </div>
+}
+<h2>WardList</h2>

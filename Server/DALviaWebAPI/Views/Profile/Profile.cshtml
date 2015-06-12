@@ -1,0 +1,54 @@
+﻿@model Entities.Dto.UserDto
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/Layout_start.cshtml";
+}
+
+<table class="profile">
+    <tr>
+        <td rowspan="4">
+            <input type="image" class="bigAvatar" src="avaYanis.bmp" />
+        </td>
+        <td>
+            <p>Personal data:</p>
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+            <p>Name:<p /> <b>@Html.ValueFor(model=>model.FirstName)</b> <p/> <b>@Html.ValueFor(model => model.LastName)</b></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Age: <b>@Html.ValueFor(model => model.Age)</b></p>
+        </td>
+    </tr>
+
+
+
+    <tr>
+        <td>
+            <p>Email: <b>@Html.ValueFor(model => model.Email)</b></p>
+        </td>
+    </tr>
+    <tr>
+        @if (Model.Role == "Ward")
+        {
+            <td colspan="2">
+                <p><a href="YanisWardList.html"><input type="submit" value="View WOD" /></a></p>
+            </td>
+        }
+        else
+        {
+            <td colspan="2">
+                @Html.ActionLink("View Ward List", "GoToWardList",Model)
+
+            </td>
+        }
+        
+    </tr>
+
+</table> 
